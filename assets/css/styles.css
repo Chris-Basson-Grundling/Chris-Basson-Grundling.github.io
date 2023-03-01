@@ -429,6 +429,10 @@ footer {
   height: 3rem;
 }
 /* Scroll to top button ends */
+.api-button-container {
+  display: flex;
+  justify-content: center;
+}
 
 @media screen and (max-width: 768px) {
   .hamburger {
