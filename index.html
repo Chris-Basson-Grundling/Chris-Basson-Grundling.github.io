@@ -119,6 +119,29 @@
   </div>
 </nav>
 
+<section class="sub" id="sub">
+  <h3>Get Api call to https://httpbin.org/</h3>
+  <div class="api-button-container">
+    <button class="submit-btn" onclick="handleApiRequest()">Make API Request</button>
+  </div>
+</section>
+
+<script>
+  function handleApiRequest() {
+    window.dataLayer = window.dataLayer || [];
+    const key = window.dataLayer[1].key
+    const value = window.dataLayer[1].value
+
+    if (key && value) {
+      fetch(`https://httpbin.org/get?key=${key}&value=${value}`)
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
+    } else {
+      console.log('Key and/or value are not set!')
+    }
+  }
+</script>
+
 <!-- Hero section -->
 <section class="hero">
   <div class="intro-text">
@@ -237,30 +260,6 @@
     </div>
   </div>
 </section>
-
-<!-- Email subscription -->
-<section class="sub" id="sub">
-  <h3>Get Api call to https://httpbin.org/</h3>
-  <div class="api-button-container">
-    <button class="submit-btn" onclick="handleApiRequest()">Make API Request</button>
-  </div>
-</section>
-
-<script>
-  function handleApiRequest() {
-    window.dataLayer = window.dataLayer || [];
-    const key = window.dataLayer[1].key
-    const value = window.dataLayer[1].value
-
-    if (key && value) {
-      fetch(`https://httpbin.org/get?key=${key}&value=${value}`)
-        .then(response => console.log(response))
-        .catch(error => console.log(error));
-    } else {
-      console.log('Key and/or value are not set!')
-    }
-  }
-</script>
 
 <!-- Social icons -->
 <section class="social">
